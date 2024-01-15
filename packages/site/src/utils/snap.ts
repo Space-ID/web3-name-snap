@@ -42,7 +42,6 @@ export const connectSnap = async (
 export const getSnap = async (version?: string): Promise<Snap | undefined> => {
   try {
     const snaps = await getSnaps();
-
     return Object.values(snaps).find(
       (snap) =>
         snap.id === defaultSnapOrigin && (!version || snap.version === version),
@@ -59,9 +58,22 @@ export const getSnap = async (version?: string): Promise<Snap | undefined> => {
 
 export const sendHello = async () => {
   await window.ethereum.request({
-    method: 'wallet_invokeSnap',
+    method: 'name-lookup',
     params: { snapId: defaultSnapOrigin, request: { method: 'hello' } },
   });
 };
 
 export const isLocalSnap = (snapId: string) => snapId.startsWith('local:');
+
+export const getLatestVersion = async () => {
+  try {
+    const metadata = await fetch(
+      'https://registry.npmjs.org/@web3-name-sdk/snap',
+      { method: 'GET' },
+    ).then((res) => res.json());
+    return metadata['dist-tags'].latest;
+  } catch (error) {
+    console.log('Failed to obtain latest version', error);
+    return undefined;
+  }
+};
