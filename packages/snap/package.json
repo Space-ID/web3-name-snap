@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "@metamask/snaps-sdk": "^1.2.0",
-    "buffer": "^6.0.3"
+    "@web3-name-sdk/core": "^0.1.13",
+    "buffer": "^6.0.3",
+    "viem": "^1.19.11"
   },
   "devDependencies": {
     "@jest/globals": "^29.5.0",
