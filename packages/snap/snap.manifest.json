@@ -1,7 +1,7 @@
 {
-  "version": "0.0.1",
-  "description": "Space ID",
-  "proposedName": "Space ID",
+  "version": "0.0.2",
+  "description": "SPACE ID",
+  "proposedName": "SPACE ID",
   "repository": {
     "type": "git",
     "url": "https://github.com/Space-ID/web3-name-snap"
@@ -19,11 +19,8 @@
   },
   "initialPermissions": {
     "endowment:network-access": {},
-    "endowment:name-lookup": [
-      "eip155:1",
-      "eip155:56",
-      "eip155:42161"
-    ]
+    "endowment:name-lookup": {
+    }
   },
-  "manifestVersion": "0.1"
+  "manifestVersion": "0.2"
 }
