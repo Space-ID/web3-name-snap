@@ -12,6 +12,7 @@ import { defaultSnapOrigin } from '../config';
 import { MetamaskActions, MetaMaskContext } from '../hooks';
 import {
   connectSnap,
+  getLatestVersion,
   getSnap,
   isLocalSnap,
   sendHello,
@@ -111,9 +112,12 @@ const Index = () => {
 
   const handleConnectClick = async () => {
     try {
+      let version;
+      if (!isLocalSnap(defaultSnapOrigin)) {
+        version = await getLatestVersion();
+      }
+      const installedSnap = await getSnap(version);
       await connectSnap();
-      const installedSnap = await getSnap();
-
       dispatch({
         type: MetamaskActions.SetInstalled,
         payload: installedSnap,
