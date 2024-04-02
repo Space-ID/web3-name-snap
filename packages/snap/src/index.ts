@@ -11,13 +11,13 @@ export const onNameLookup: OnNameLookupHandler = async ({
   try {
     if (domain) {
       const tld = domain.split('.').pop();
-      if (!tld) {
+      if (!tld || tld.length < 2) {
         return null;
       }
       const res = await web3Name.getAddress(domain);
       if (res) {
         return {
-          resolvedAddresses: [{ protocol: tld, resolvedAddress: res }],
+          resolvedAddresses: [{ protocol: 'SPACE ID', resolvedAddress: res }],
         };
       }
       return null;

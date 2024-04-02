@@ -61,7 +61,7 @@ export const isFlask = async () => {
       method: 'web3_clientVersion',
       params: [],
     });
-    const isFlaskDetected = true; // (clientVersion as string[])?.includes('flask');
+    const isFlaskDetected = (clientVersion as string[])?.includes('flask');
 
     return Boolean(provider && isFlaskDetected);
   } catch {

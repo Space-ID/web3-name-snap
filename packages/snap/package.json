@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@metamask/snaps-sdk": "^2.0.0",
-    "@web3-name-sdk/core": "^0.1.13",
+    "@web3-name-sdk/core": "^0.1.16 ",
     "buffer": "^6.0.3",
     "viem": "^1.19.11"
   },
@@ -40,8 +40,8 @@
     "@metamask/eslint-config-jest": "^12.1.0",
     "@metamask/eslint-config-nodejs": "^12.1.0",
     "@metamask/eslint-config-typescript": "^12.1.0",
-    "@metamask/snaps-cli": "^5.0.0",
-    "@metamask/snaps-jest": "^5.0.0",
+    "@metamask/snaps-cli": "^6.1.0",
+    "@metamask/snaps-jest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
     "eslint": "^8.45.0",
