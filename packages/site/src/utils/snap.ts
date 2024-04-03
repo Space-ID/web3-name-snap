@@ -70,7 +70,7 @@ export const getLatestVersion = async () => {
     const metadata = await fetch(
       'https://registry.npmjs.org/@web3-name-sdk/snap',
       { method: 'GET' },
-    ).then((res) => res.json());
+    ).then(async (res) => res.json());
     return metadata['dist-tags'].latest;
   } catch (error) {
     console.log('Failed to obtain latest version', error);

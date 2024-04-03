@@ -1,6 +1,7 @@
 import type { Dispatch, ReactNode, Reducer } from 'react';
 import { createContext, useEffect, useReducer } from 'react';
 
+import { defaultSnapOrigin } from '../config';
 import type { Snap } from '../types';
 import {
   detectSnaps,
@@ -9,7 +10,6 @@ import {
   isFlask,
   isLocalSnap,
 } from '../utils';
-import { defaultSnapOrigin } from '../config';
 
 export type MetamaskState = {
   snapsDetected: boolean;
