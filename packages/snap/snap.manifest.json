@@ -1,28 +1,25 @@
 {
-  "version": "0.1.0",
-  "description": "An example Snap written in TypeScript.",
-  "proposedName": "TypeScript Example",
+  "version": "0.0.3",
+  "description": "SPACE ID",
+  "proposedName": "SPACE ID",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "https://github.com/Space-ID/web3-name-snap"
   },
   "source": {
-    "shasum": "LQzfQRMtMPmLWYrGQdUMD5BWV4LGbDSFQ3o6VIkH/ZY=",
+    "shasum": "NG2KHnq3wc8K/UwmGzf9pqrJxtCF9juUIQQbsk5Ur7Q=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "snap",
+        "packageName": "@web3-name-sdk/snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
   },
   "initialPermissions": {
-    "snap_dialog": {},
-    "endowment:rpc": {
-      "dapps": true,
-      "snaps": false
-    }
+    "endowment:network-access": {},
+    "endowment:name-lookup": {}
   },
   "manifestVersion": "0.1"
 }

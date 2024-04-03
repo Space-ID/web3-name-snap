@@ -1,8 +1,15 @@
 import type { Dispatch, ReactNode, Reducer } from 'react';
 import { createContext, useEffect, useReducer } from 'react';
 
+import { defaultSnapOrigin } from '../config';
 import type { Snap } from '../types';
-import { detectSnaps, getSnap, isFlask } from '../utils';
+import {
+  detectSnaps,
+  getLatestVersion,
+  getSnap,
+  isFlask,
+  isLocalSnap,
+} from '../utils';
 
 export type MetamaskState = {
   snapsDetected: boolean;
@@ -95,9 +102,13 @@ export const MetaMaskProvider = ({ children }: { children: ReactNode }) => {
      * Detect if a snap is installed and set it in the state.
      */
     async function detectSnapInstalled() {
+      let version;
+      if (!isLocalSnap(defaultSnapOrigin)) {
+        version = await getLatestVersion();
+      }
       dispatch({
         type: MetamaskActions.SetInstalled,
-        payload: await getSnap(),
+        payload: await getSnap(version),
       });
     }
 
