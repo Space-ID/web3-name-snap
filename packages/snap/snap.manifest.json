@@ -1,13 +1,13 @@
 {
   "version": "0.0.3",
-  "description": "SPACE ID",
-  "proposedName": "SPACE ID",
+  "description": "SPACE ID Web3 Domain",
+  "proposedName": "SPACE ID Web3 Domain",
   "repository": {
     "type": "git",
     "url": "https://github.com/Space-ID/web3-name-snap"
   },
   "source": {
-    "shasum": "NG2KHnq3wc8K/UwmGzf9pqrJxtCF9juUIQQbsk5Ur7Q=",
+    "shasum": "PwiY36dU8zfKluW6bja8vb183ql2Iv50UX921PhczGA=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
