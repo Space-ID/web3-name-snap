@@ -1,7 +1,7 @@
 {
   "name": "@web3-name-sdk/snap",
-  "version": "0.0.3",
-  "description": "SPACE ID",
+  "version": "0.0.4",
+  "description": "SPACE ID Web3 Domain",
   "repository": {
     "type": "git",
     "url": "https://github.com/Space-ID/web3-name-snap"
