@@ -1,7 +1,7 @@
 # SPACE ID Web3 Domain
 
 ## Snap audit report
-[audit report file](./docs/audit-report.pdf)
+[audit report file](./docs/SlowMist%20Audit%20Report%20-%20web3-name-snap.pdf)
 
 ## Getting Started
 
