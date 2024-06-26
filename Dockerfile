@@ -13,7 +13,7 @@ COPY ./next-routes.conf /etc/nginx/custom/
 COPY ./nginx.conf /etc/nginx/
 COPY ./default.conf /etc/nginx/conf.d/
 # COPY ./gzip.conf /etc/nginx/conf.d/
-COPY ./out ./
+COPY ./public ./
 RUN rm -rf ./_next && rm -rf ./fonts
 
 EXPOSE 8080
