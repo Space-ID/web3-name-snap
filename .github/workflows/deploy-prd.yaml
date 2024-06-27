@@ -1,15 +1,14 @@
 name: Space ID Name Snap
 
 on:
-  release:
-    types:
-      - created
+  push:
+    branches: [fix-cd]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.FE_DEPLOYER_AWS_ACCESS_KEY_ID_2 }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.FE_DEPLOYER_AWS_SECRET_ACCESS_KEY_2 }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.FE_DEPLOYER_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.FE_DEPLOYER_AWS_SECRET_ACCESS_KEY }}
     steps:
       - uses: actions/checkout@v2
 
@@ -19,6 +18,7 @@ jobs:
         # env:
         #   GITHUB_RELEASE_TAG: ${{ GITHUB_REF_NAME }}
       - run: yarn install
+        working-directory: ./packages/site
       - run: yarn build
 
       - name: Get short SHA
