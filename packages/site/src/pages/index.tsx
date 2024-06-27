@@ -117,7 +117,9 @@ const Index = () => {
         version = await getLatestVersion();
       }
       const installedSnap = await getSnap(version);
-      await connectSnap();
+      if (!installedSnap) {
+        await connectSnap(defaultSnapOrigin, { version });
+      }
       dispatch({
         type: MetamaskActions.SetInstalled,
         payload: installedSnap,
