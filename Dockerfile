@@ -6,15 +6,15 @@
 
 # nginx
 FROM nginx:alpine AS runner
-WORKDIR /app
+WORKDIR /
 # COPY --from=deps /app/out ./
 # COPY --from=deps /app/next-routes.conf /etc/nginx/conf.d/custom/
-COPY ./next-routes.conf /etc/nginx/custom/
+#COPY ./next-routes.conf /etc/nginx/custom/
 COPY ./nginx.conf /etc/nginx/
 COPY ./default.conf /etc/nginx/conf.d/
 # COPY ./gzip.conf /etc/nginx/conf.d/
-COPY ./out ./
-RUN rm -rf ./_next && rm -rf ./fonts
+COPY ./packages/site/public ./
+
 
 EXPOSE 8080
 ENV PORT 8080
