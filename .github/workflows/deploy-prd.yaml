@@ -19,37 +19,7 @@ jobs:
         # env:
         #   GITHUB_RELEASE_TAG: ${{ GITHUB_REF_NAME }}
       - run: yarn install
-      - run: SENTRY_RELEASE=${{ github.sha }} yarn build:export
-
-      # - name: Create Stg Sentry release
-      #   uses: getsentry/action-release@v1
-      #   env:
-      #     SENTRY_AUTH_TOKEN: 4dd2ce137a8f48f2a4d551bfca331661528cb290ec3143048dd7a45b1d242980
-      #     SENTRY_ORG: space-id
-      #     SENTRY_PROJECT: space-id-2-stg
-      #     SENTRY_URL: https://sentry.space.id
-      #   with:
-      #     version: ${{ github.sha }}
-      #     environment: stg
-      #     set_commits: skip
-      #     sourcemaps: ./out
-      #     dist: stg
-      #     url_prefix: ~/
-
-      - name: Remove Source Map
-        run: find ./out -name "*.map" | xargs rm -f {} \;
-
-      # - name: Deploy
-      #   uses: reggionick/s3-deploy@v3
-      #   with:
-      #     folder: 'out'
-      #     bucket: 'test-static-space-id'
-      #     bucket-region: 'us-west-2'
-      #     dist-id: 'E1B3Z9PYO7BDH0'
-      #     invalidation: /
-      #     delete-removed: true
-      #     no-cache: false
-      #     private: true
+      - run: yarn build
 
       - name: Get short SHA
         id: slug
