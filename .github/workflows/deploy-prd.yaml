@@ -18,8 +18,7 @@ jobs:
         # env:
         #   GITHUB_RELEASE_TAG: ${{ GITHUB_REF_NAME }}
       - run: yarn install
-        working-directory: ./packages/site
-      - run: yarn build
+      - run: yarn build:site
 
       - name: Get short SHA
         id: slug
