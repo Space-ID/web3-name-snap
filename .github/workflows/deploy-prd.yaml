@@ -45,7 +45,7 @@ jobs:
           IMAGE_TAG_0: ${{ github.sha }}
           IMAGE_TAG_1: sha-${{ steps.slug.outputs.sha7 }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_0 -f Dockerfile.Ssr -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_1 .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_0 -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_1 .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY --all-tags
 
   deploy:
