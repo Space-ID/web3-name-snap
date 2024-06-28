@@ -2,7 +2,7 @@ name: Space ID Name Snap
 
 on:
   push:
-    branches: [fix-cd]
+    branches: [site]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
