@@ -13,7 +13,9 @@ export const onNameLookup: OnNameLookupHandler = async ({ domain }) => {
       const res = await web3Name.getAddress(domain);
       if (res) {
         return {
-          resolvedAddresses: [{ protocol: 'SPACE ID', resolvedAddress: res }],
+          resolvedAddresses: [
+            { protocol: 'SPACE ID', resolvedAddress: res, domainName: domain },
+          ],
         };
       }
       return null;
