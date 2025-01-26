@@ -7,7 +7,7 @@ export const onNameLookup: OnNameLookupHandler = async ({ domain }) => {
   try {
     if (domain) {
       const tld = domain.split('.').pop();
-      if (!tld || tld.length < 2) {
+      if (!tld) {
         return null;
       }
       const res = await web3Name.getAddress(domain);
