@@ -33,6 +33,9 @@
     "buffer": "^6.0.3",
     "viem": "^2.15.1"
   },
+  "resolutions": {
+    "@web3-name-sdk/core": "0.3.3-beta.6"
+  },
   "devDependencies": {
     "@jest/globals": "^29.5.0",
     "@metamask/auto-changelog": "^3.4.4",
