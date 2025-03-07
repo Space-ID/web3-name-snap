@@ -12,7 +12,7 @@ export const onNameLookup: OnNameLookupHandler = async ({ domain }) => {
       console.log('111111')
       web3Name = getWeb3PaymentIdName();
     } else {
-      console.log('222222')
+      console.log('2222222')
       web3Name = getWeb3Name();
     }
     if (!web3Name) return null;
