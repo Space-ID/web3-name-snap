@@ -13,7 +13,7 @@ const getWeb3Name = () => {
 const getWeb3PaymentIdName = () => {
   if (!paymentIdName) {
     paymentIdName = createPaymentIdName()
-    console.log('1')
+    console.log('2')
   }
   return paymentIdName
 };
