@@ -19205,7 +19205,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 06f47ff78f7395f4d2d9d46bca9a808b986eb4b70d4e61f16bbb7ebcc6e155f59a8c60cb0eaee9fa2e1d8323eed62d2cf941f651723eb2d557fdf32f94f50542
+  checksum: 62e3b1f627f28b3f735dbed13222f82a7bb12d4ab43890438d48a2a64d32eaa2670c86a618fd612cdc00cb41aee205177fae70cba8f44a44a2ad494c26cac258
   languageName: node
   linkType: hard
 
