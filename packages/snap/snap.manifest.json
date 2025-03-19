@@ -7,7 +7,7 @@
     "url": "https://github.com/Space-ID/web3-name-snap"
   },
   "source": {
-    "shasum": "VN2jmFLxUpaamvelszKlpax9DyUaKT/E6xokH1NfQSI=",
+    "shasum": "NfI8rfN0FrbHjMyTEMO+2PG92V2qVBNOJWUJnn/LSfA=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -19,7 +19,9 @@
   },
   "initialPermissions": {
     "endowment:network-access": {},
-    "endowment:name-lookup": {}
+    "endowment:name-lookup": {},
+    "endowment:ethereum-provider": {},
+    "snap_dialog": {}
   },
   "manifestVersion": "0.1"
 }
