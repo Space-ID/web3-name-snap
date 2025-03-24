@@ -105,6 +105,7 @@ export const MetaMaskProvider = ({ children }: { children: ReactNode }) => {
       let version;
       if (!isLocalSnap(defaultSnapOrigin)) {
         version = await getLatestVersion();
+        console.log('ver', version)
       }
       dispatch({
         type: MetamaskActions.SetInstalled,

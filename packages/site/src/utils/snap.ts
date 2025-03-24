@@ -42,10 +42,12 @@ export const connectSnap = async (
 export const getSnap = async (version?: string): Promise<Snap | undefined> => {
   try {
     const snaps = await getSnaps();
+    console.log('ver', version, snaps)
     return Object.values(snaps).find(
       (snap) =>
         snap.id === defaultSnapOrigin && (!version || snap.version === version),
     );
+
   } catch (error) {
     console.log('Failed to obtain installed snap', error);
     return undefined;
@@ -71,7 +73,14 @@ export const getLatestVersion = async () => {
       'https://registry.npmjs.org/@web3-name-sdk/snap',
       { method: 'GET' },
     ).then(async (res) => res.json());
-    return metadata['dist-tags'].latest;
+    if (metadata['dist-tags']?.beta) {
+      return metadata['dist-tags'].beta;
+    }
+    // 如果 `dist-tags` 没有 beta，则从所有 versions 里筛选
+    const versions = Object.keys(metadata.versions);
+    const betaVersions = versions.filter((v) => v.includes('beta')).sort().reverse();
+
+    return betaVersions.length > 0 ? betaVersions[0] : undefined;
   } catch (error) {
     console.log('Failed to obtain latest version', error);
     return undefined;

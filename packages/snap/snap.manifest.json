@@ -19,7 +19,9 @@
   },
   "initialPermissions": {
     "endowment:network-access": {},
-    "endowment:name-lookup": {}
+    "endowment:name-lookup": {},
+    "endowment:ethereum-provider": {},
+    "endowment:lifecycle-hooks": {}
   },
   "manifestVersion": "0.1"
 }

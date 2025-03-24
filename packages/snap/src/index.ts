@@ -1,32 +1,31 @@
 
-import type { OnNameLookupHandler } from '@metamask/snaps-sdk';
-
-import { getWeb3Name, getWeb3PaymentIdName } from './utils';
+import type { OnInstallHandler, OnNameLookupHandler } from '@metamask/snaps-sdk';
+import { getUserAddress, getWeb3Name, getWeb3PaymentIdName, sendGAEvent } from './utils';
 
 export const onNameLookup: OnNameLookupHandler = async ({ domain }) => {
-  // const web3Name = getWeb3Name();
   if (!domain) return null;
   try {
     let web3Name;
     if (domain.includes('@')) {
-      console.log('111111')
       web3Name = getWeb3PaymentIdName();
+      sendGAEvent('paymentIdVersion', {})
     } else {
-      console.log('222222')
       web3Name = getWeb3Name();
+      sendGAEvent('normalVersion', {})
     }
     if (!web3Name) return null;
     if (domain) {
       const tld = domain.split('.').pop();
       if (!tld) {
-        console.log('Nottld', tld);
         return null;
       }
-      console.log('tld', tld);
       const res = domain.includes('@')
         ? await web3Name.getAddress({ name: domain, chainId: 1 })
         : await web3Name.getAddress(domain);
-      console.log('resresres', res);
+      if (res) {
+        const address = String(await getUserAddress())
+        sendGAEvent('ResolveName', { domain, address: `addr_${address}` })
+      }
       if (res) {
         return {
           resolvedAddresses: [
@@ -42,31 +41,7 @@ export const onNameLookup: OnNameLookupHandler = async ({ domain }) => {
   return null;
 };
 
-
-// export const onNameLookup: OnNameLookupHandler = async ({ domain }) => {
-//   const web3Name = getWeb3Name();
-//   console.log('domain', domain, web3Name);
-//   try {
-//     if (domain) {
-//       const tld = domain.split('.').pop();
-//       if (!tld) {
-//         console.log('!tld', tld);
-//         return null;
-//       }
-//       console.log('tld', tld);
-//       const res = await web3Name.getAddress()
-//       console.log('resresres', res);
-//       if (res) {
-//         return {
-//           resolvedAddresses: [
-//             { protocol: 'SPACE ID', resolvedAddress: res, domainName: domain },
-//           ],
-//         };
-//       }
-//       return null;
-//     }
-//   } catch (error: any) {
-//     return null;
-//   }
-//   return null;
-// };
+export const onInstall: OnInstallHandler = async () => {
+  const address = String(await getUserAddress())
+  await sendGAEvent('installed', { address: `addr_${address}` })
+};
