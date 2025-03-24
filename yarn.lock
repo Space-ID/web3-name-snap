@@ -5416,9 +5416,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web3-name-sdk/core@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@web3-name-sdk/core@npm:0.4.0"
+"@web3-name-sdk/core@npm:0.4.0-beta.1":
+  version: 0.4.0-beta.1
+  resolution: "@web3-name-sdk/core@npm:0.4.0-beta.1"
   dependencies:
     "@adraffy/ens-normalize": ^1.10.0
     "@ensdomains/ens-validation": ^0.1.0
@@ -5429,7 +5429,7 @@ __metadata:
     "@siddomains/sei-sidjs": ^0.0.4
     "@solana/web3.js": ^1.75.0
     viem: ^2.23.12
-  checksum: 85eb2d841c18ebafd1e9eda94c51e4c0de9fce27037978950a49c701f1a146dd104aec2f99552ed7b86a3dd92832356be356c185e667630bc9a561ccf2173c3e
+  checksum: 8b76a6c7b1bd1815f5c6c7d3dd38e54a3f65e4773814b065278c7420ad57138466db694b8b41d8cdfed491dbfa840752aaac8c47932d1c1aa45059e757bf5cbb
   languageName: node
   linkType: hard
 
@@ -5448,7 +5448,7 @@ __metadata:
     "@metamask/snaps-sdk": ^2.0.0
     "@typescript-eslint/eslint-plugin": ^5.42.1
     "@typescript-eslint/parser": ^5.42.1
-    "@web3-name-sdk/core": 0.4.0
+    "@web3-name-sdk/core": 0.4.0-beta.1
     buffer: ^6.0.3
     eslint: ^8.45.0
     eslint-config-prettier: ^8.5.0
